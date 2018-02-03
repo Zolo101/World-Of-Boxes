@@ -1,0 +1,18 @@
+box {
+    "name":"Box",
+    "description":"A thing your making. When placed it can be used as a 'box bank', it can store up to 10 boxes (10kg).",
+    "weight":1,
+    "mws":1,
+    "hut":10,
+    "cost":0
+}
+
+crate {
+    "name":"Crate",
+    "description":"A Cheap Crate. It can store up to 25 boxes (25kg).",
+    "weight":4,
+    "mws":6,
+    "hut":25,
+    "cost":10,
+}
+
