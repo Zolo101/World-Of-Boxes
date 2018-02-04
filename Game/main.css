@@ -10,15 +10,17 @@
 
 /* GAME */
 
-#game-counter,#game-cps,#game-upgrades,#buildings {
+#game-counter,#game-bps,#game-upgrades,#buildings {
     font-family: monospace;
-    font-size: 48px;
+    font-size: 20px;
     color: darkblue;
     text-shadow: 2px 2px 2px #595959;
     text-align: center;
 }
 
-#game-main-button-desc { color: lightgray; font-style: italic; }
+#game-counter,#game-bps { font-size: 30px; }
+
+#game-main-button-desc { color: lightgray; font-style: italic; text-shadow: 1px 1px 1px #595959; }
 
 #game { width: 100%; overflow: hidden; }
 
@@ -26,7 +28,17 @@
     text-align: center;
 }
 
-#game-upgrades,#buildings,#game-main {
+#game-main {
     float: left;
-    width: 33%;
+    width: 20%;
+}
+
+#game-upgrades {
+    float: left;
+    width: 40%;
+}
+
+#buildings {
+    float: left;
+    width: 40%;
 }
