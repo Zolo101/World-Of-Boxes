@@ -10,8 +10,21 @@
     <script src="Game/possibly.js" type="text/javascript"></script>
     </head>
     <body>
-        <p id="game-counter">N/A Boxes</p>
-        <p id="game-cps">N/A Cps</p>
-        <button class="btn btn-success btn-lg" id="game-button" onclick="createBox(1)">Create Box</button>
+        <div id="game">
+            <div id="game-count">
+                <p id="game-counter">N/A Boxes</p>
+                <p id="game-cps">N/A Cps</p>
+            </div>
+            <div id="game-upgrades">
+                <p>Upgrades</p>
+                <button class="btn btn-info btn-sm" id="game-upgrade-button1" onclick="upgrade1()">Productive Hands<p id="game-main-button-desc">Your manual box <br>making goes up by 1</p><p id="game-upgrade-button1-cost">25 Boxes</p></button>
+            </div>
+            <div id="game-main">
+                <button class="btn btn-success btn-lg" id="game-main-button" onclick="createBox(1)">Create Box<p id="game-main-button-desc">Creates  1 Box</p></button>
+            </div>
+            <div id="buildings">
+                <p>Buildings</p>
+            </div>
+        </div>
     </body>
 </html>

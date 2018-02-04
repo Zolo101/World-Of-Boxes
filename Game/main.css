@@ -10,7 +10,7 @@
 
 /* GAME */
 
-#game-counter,#game-cps {
+#game-counter,#game-cps,#game-upgrades,#buildings {
     font-family: monospace;
     font-size: 48px;
     color: darkblue;
@@ -18,6 +18,15 @@
     text-align: center;
 }
 
-#game-button {
+#game-main-button-desc { color: lightgray; font-style: italic; }
 
+#game { width: 100%; overflow: hidden; }
+
+#game-button {
+    text-align: center;
+}
+
+#game-upgrades,#buildings,#game-main {
+    float: left;
+    width: 33%;
 }
