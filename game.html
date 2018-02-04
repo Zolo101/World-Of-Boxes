@@ -10,10 +10,14 @@
     <script src="Game/possibly.js" type="text/javascript"></script>
     </head>
     <body style="background-color: aliceblue;">
+        <div id="game-navbar">World Of Boxes 0.03</div>
         <div id="game">
             <div id="game-count">
                 <p id="game-counter">0 Boxes</p>
                 <p id="game-bps">0 Bps</p>
+            </div>
+            <div id="game-inv">
+                <p id="game-counter">0 Boxes</p>
             </div>
             <div id="game-upgrades">
                 <p>Upgrades</p>
@@ -22,7 +26,7 @@
             <div id="game-main">
                 <button class="btn btn-success btn-lg" id="game-main-button" onclick="createBox()">Create Box<p id="game-main-button-desc">Creates  1 Box</p></button>
             </div>
-            <div id="buildings">
+            <div id="game-buildings">
                 <p>Buildings</p>
                 <button class="btn btn-secondary btn-sm" id="game-building-button1" onclick="building1()">3D Cardboard Printer 200<p id="game-main-button-desc">A Small but Steady <br>3d printer you found at the local store. <br><br>You get 1 box per second.</p><p id="game-building-button1-cost">Cost: 80 Boxes</p></button>
                 <button class="btn btn-secondary btn-sm" id="game-building-button2" onclick="building2()">3D Cardboard Printer 580<p id="game-main-button-desc">An Advanced <br>3d printer with an <br> cool new B3force BT 320 chip. <br><br>You get 4 boxes per second.</p><p id="game-building-button2-cost">Cost: 400 Boxes</p></button>
