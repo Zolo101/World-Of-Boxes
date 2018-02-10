@@ -56,5 +56,5 @@ function building2() {
 
 window.setInterval(function () {
     createbps();
-    document.getElementById("game-bps").innerHTML = bps + " Bps";
+    document.getElementById("game-bps").innerHTML = bps + "/s";
 }, 1000);

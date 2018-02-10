@@ -10,6 +10,11 @@
 
 /* GAME */
 
+.inv-ps {
+    color: #bfbfbf;
+}
+
+#game-inv-box {}
 #game-navbar {
     position: absolute;
     top: 2px;
@@ -18,9 +23,13 @@
     box-shadow: 1px 0px 2px #888;
 }
 
-#game-counter,#game-bps {
-    font-family: serif;
+#game-counter {
+    font-family: monospace;
     font-size: 18px;
+}
+
+#game-bps {
+    color: #bfbfbf;
 }
 
 #game-upgrades,#buildings {
