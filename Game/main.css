@@ -50,26 +50,15 @@
 
 #game-inv {
     float: left;
-    width: 150px;
+    width: 20%;
 }
 
 #game-main {
     float: left;
-    width: 25%;
+    width: 80%;
 }
-
-#game-upgrades {
-    float: left;
-    width: 25%;
-}
-
-#game-buildings {
-    float: left;
-    width: 25%;
-}
-
 
 #game-main,#game-upgrades,#game-buildings {
-    border-style: solid;
+    /*border-style: solid;*/
     padding: 2px;
 }
