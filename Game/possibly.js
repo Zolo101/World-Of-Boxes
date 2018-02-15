@@ -56,7 +56,7 @@ function constructbox() {
 }
 
 function compressbox(Number) {
-    if (box.quantity >= 10 * Number && steel.quantity <= 9) {
+    if (box.quantity >= 10 * Number && steel.quantity <= 10-Number) {
         box.quantity = box.quantity - 10 * Number;
         steel.quantity = steel.quantity + 1 * Number;
         document.getElementById("game-box-counter").innerHTML = box.quantity;

@@ -11,7 +11,7 @@
     </head>
     <body style="background-image: url(Game/Images/zigzagwool.png)">
         <div id="game-titlebar">
-            <p id="game-titlebar-text">World Of Boxes 0.03.beta.1 <b>Heavily Inspired by Kittens game.</b></p>
+            <p id="game-titlebar-text">World Of Boxes 0.1.0beta.2 <b>Heavily Inspired by Kittens game.</b></p>
         </div>
         <div id="game-container">
             <div id="game-inv">
@@ -41,19 +41,17 @@
                 </table>
             </div>
             <div id="game-main">
-                <button onclick="constructbox()" id="game-construct-button" class="btn btn-secondary" class="game-button">Construct Box</button>
+                <button href="#"onclick="constructbox()" id="game-construct-button" class="btn btn-secondary" class="game-button">Construct Box</button>
                 <div class="btn-group" role="group">
                     <button type="button" onclick="compressbox(1)" id="game-compress-button" class="btn btn-secondary" class="game-button">Compress Box</button>
+
                     <button type="button" onclick="compressbox(5)" id="game-compress-button" class="btn btn-secondary" class="game-button">x5</button>
+                </div>
+                <div id="game-main-div">
+                    <div id="game-construct-button-div" class="game-button-div">Constructs a box for you.</div>
+                    <div id="game-compress-button-div" class="game-button-div">Compresses 10 Boxes to make some Steel.</div>
                 </div>
             </div>
         </div>
-        <!--<div id="game-div">
-            <div class="game-div-div" id="game-div-cb">
-                <p><b>Contruct Box</b></p>
-                <p>Contructs a box.</p>
-                <div class="game-div-div-progress" id="game-div-cb-progress"></div>
-            </div>
-        </div>-->
     </body>
 </html>
