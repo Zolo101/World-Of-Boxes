@@ -10,96 +10,22 @@
 
 /* GAME */
 
-body {
-    font-family: pixel;
+#body {
+    background-color: #ededed;
 }
 
-.inv-ps { color: #bfbfbf; }
-
-p,td { color: white; }
-th { text-shadow: 1px 1px 2px #ff0000 }
-
-#game-titlebar-text { color: black;}
-
-#game-titlebar {
-    background-color: azure;
-    bottom: 20px;
+#game-info {
+    /* Box info */
 }
 
-.game-counter-limit { font-style: italic; color: darkgray}
-
-#game-navbar {
-    position: absolute;
-    top: 2px;
-    height: 26px;
-    border-bottom: 1px solid gray;
-    box-shadow: 1px 0px 2px #888;
+#game-info.game-info-box-info:hover {
+    visibility: visible;
 }
 
-.game-button {
-    border-radius: 2px;
-    background-color: dimgray;
-    color: lightgray;
-}
-
-.game-item-title:hover { font-weight: 500; }
-
-#game-counter {
-    font-family: monospace;
-    font-size: 18px;
-}
-
-#game-bps { color: #bfbfbf; }
-#game-main-button-desc { color: lightgray; font-style: italic; text-shadow: 1px 1px 1px #595959; }
-#game { width: 100%; min-width: 1075px; max-width: 1920px; overflow: hidden; position: absolute; }
-
-.game-button {
-
-}
-
-#game-construct-button-div,#game-compress-button-div {
-    color: white;
-    padding: 20px;
-    display: none;
-    white-space: nowrap;
-    up: 400px;
-}
-
-#game-construct-button:hover,#game-compress-button:hover {
-    text-shadow: 2px 2px 4px #000000; background-color: darkgray;
-}
-#game-construct-button:hover~#game-construct-button-div,#game-compress-button:hover~#game-compress-button-div {
-    display: inline;
-
-}
-
-/*.game-div-div {
-    border-style: solid;
-
-}
-
-.game-div-div-progress {
-
-} */
-
-#game-inv {
-    float: left;
-    width: 25%;
-    height: 40%;
-}
-
-#game-main {
-    float: left;
-    width: 75%;
-    height: 40%;
-}
-
-#game-div {
-    float: left;
-    height: 20%;
-}
-
-#game-main,#game-inv,#game-div {
-    /*border-style: solid;*/
-    padding: 2px;
+#game-info-box-info {
+    visibility: hidden;
+    max-width: 228px;
+    background-color: aquamarine;
+    outline-style: solid;
+    outline-width: 2px;
 }
