@@ -9,13 +9,15 @@
     </head>
     <body id="body">
         <div id="game">
-            <div id="game-info">
-                <div id="game-info-box-info">
-                    <p>What your trying to make loads of.</p>
-                </div>
+            <div id="game-res-info">
             <ui>Boxes: </ui><ui id="boxes">0</ui><br>
+            <ui>Compressed Boxes: </ui><ui id="compressed-boxes">0</ui><br>
             </div>
-            <button type="button" onclick="makeabox()">Make a Box</button>
+            <div>
+            <button id="button-makeabox" class="button" type="button" onclick="makeabox()">Make a Box</button><p id="hover-mab" class="button-hover">Makes a box.</p></div>
+            <div><button id="button-compressbox" class="button" type="button" onclick="compressbox()">Compress Boxes</button><p id="hover-cb" class="button-hover">Compresses 9 boxes. These boxes are great for making tools.</p></div>
+            <p>-----------</p>
+            <div><button id="button-makeascrewdriver" class="button" type="button" onclick="makeascrewdriver()" style="color: cornflowerblue">Make a Screwdriver</button><p id="hover-masd" class="button-hover">By making a screwdriver, you'll be 2x as fast in making boxes.</p></div>
         </div>
     </body>
 </html>

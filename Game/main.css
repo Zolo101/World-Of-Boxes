@@ -14,18 +14,46 @@
     background-color: #ededed;
 }
 
-#game-info {
+.button {
+}
+
+#game-res-info {
     /* Box info */
 }
 
-#game-info.game-info-box-info:hover {
-    visibility: visible;
+#game-info {
+    outline-style: solid;
+    outline-width: 1px;
+    min-height: 100px;
+    max-height: 100px;
+    min-width: 100px;
+    max-width: 250px;
+    text-align: center;
+    padding-top: 10px;
 }
 
-#game-info-box-info {
-    visibility: hidden;
+.button-hover {
+    display: none;
+    /*
     max-width: 228px;
     background-color: aquamarine;
     outline-style: solid;
-    outline-width: 2px;
+    outline-width: 2px; */
+}
+
+/* Make a box */
+#button-makeabox:hover + #hover-mab {
+    display: inline;
+}
+/* Compress a box */
+#button-compressbox:hover + #hover-cb {
+    display: inline;
+}
+
+#button-makeascrewdriver:hover + #hover-masd {
+    display: inline;
+}
+
+#button-makeabox:hover + #hover-mab {
+    display: inline;
 }
