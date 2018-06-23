@@ -21,7 +21,7 @@
     /* Box info */
 }
 
-#game-info {
+/* #game-info {
     outline-style: solid;
     outline-width: 1px;
     min-height: 100px;
@@ -29,9 +29,8 @@
     min-width: 100px;
     max-width: 250px;
     text-align: center;
-    padding-top: 10px;
 }
-
+ */
 .button-hover {
     display: none;
     /*
@@ -41,12 +40,21 @@
     outline-width: 2px; */
 }
 
+#game-res-info {
+    font-family: monospace;
+}
+
 /* Make a box */
 #button-makeabox:hover + #hover-mab {
     display: inline;
 }
 /* Compress a box */
 #button-compressbox:hover + #hover-cb {
+    display: inline;
+}
+
+/* Make a stall */
+#button-stall:hover + #hover-stl {
     display: inline;
 }
 
