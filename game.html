@@ -3,28 +3,85 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>World of Boxes 0.03</title>
+        <title>World of Boxes 0.04</title>
         <link rel="stylesheet" type="text/css" href="Game/main.css">
+        <link rel="shortcut icon" href="Game/Images/box.png" />
+        <!-- Maybe host these? -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="Game/possibly.js" type="text/javascript"></script>
     </head>
     <body id="body">
+       <div id="header">
+           <ui>World of Boxes 0.04 -- The CSSCompletion Update</ui><a href="Logs/log.html" target="_blank">(log)</a><ui> -- With Added Jquery -- Clicking on a header closes it's div. -- Last Updated 17-8-18</ui>
+       </div>
         <div id="game">
-            <div id="game-res-info">
-            <ui>Boxes: </ui><ui id="boxes">0</ui><br>
-            <ui style="color: dimgrey;">Compressed Boxes: </ui><ui id="compressed-boxes" style="color: dimgrey;">0</ui><br>
-            <ui class="stalls" style="color:darkorange;">Stalls: </ui><ui class="stalls" id="stall" style="color:darkorange;">0</ui><br>
-            <ui class="cash" style="color:limegreen;">Cash: </ui><ui class="cash" id="cashnum" style="color:limegreen;">0</ui><br>
-            </div>
-            <div>
-            <button id="button-makeabox" class="button" type="button" onclick="makeabox()">Make a Box</button><p id="hover-mab" class="button-hover">Makes a box.</p></div>
+           <div id="resources" class="column">
+               <ui>Boxes: </ui><ui id="boxes">0</ui><br>
 
-            <div><button id="button-compressbox" class="button" type="button" onclick="compressbox()">Compress Boxes</button><p id="hover-cb" class="button-hover">Compresses 9 boxes. These boxes are great for making tools.</p></div>
+                <ui style="color: dimgrey;">Compressed Boxes: </ui><ui id="compressed-boxes" style="color: dimgrey;">0</ui><br>
 
-            <div><button id="button-stall" class="button" type="button" onclick="stall()">Make a Stall</button><p id="hover-stl" class="button-hover">Creates a Stall Using 9 Compressed Boxes.</p></div>
+                <ui style="color: darkorange;text-shadow: 0px 0px 0.5px red;" id="lava-text">Lava: 0 / 1000 ml</ui><br>
 
-            <p>-----------</p>
-            <div><button id="button-makeascrewdriver" class="button" type="button" onclick="makeascrewdriver()" style="color: cornflowerblue">Make a Screwdriver</button><p id="hover-masd" class="button-hover">By making a screwdriver, you'll be 2x as fast in making boxes.</p></div>
-        </div>
+                <ui style="color:darkgray;" id="stone">Stone: 0</ui>
+
+                <br><br>
+
+                <ui><div><button id="button-debug" class="button" type="button" onclick="debug()">Debug mode</button><p id="hover-debug" class="button-hover">This gives you infinite compressed boxes.</p></div></ui>
+
+                <ui><div><button id="button-mt" class="button" type="button" onclick="tick()">Manual Tick</button><p id="hover-mt" class="button-hover">Tick's happen every second, but if you want to manually<br>tick for whatever reason you can by pressing this button.</p></div></ui><br>
+
+                <ui><div><button id="button-settings" class="button" type="button" onclick="settings()">Settings</button></div></ui>
+
+                <ui><div id="settings">
+                   <!-- <div><button id="button-settings" class="button" type="button" onclick="save()">Save</button></div>
+                   <div><button id="button-settings" class="button" type="button" onclick="load()">Load</button></div> -->
+                    <p>For now, you can reset just by refreshing this page (F5)</p><br>
+                    <p>Other than that there are no real settings at the moment.</p>
+                </div></ui>
+                <p>Fading effects will come soon, dont worry :)<br> ~/u/Zelo101</p>
+                <p id="warning">Level Up Stall does NOT work!</p>
+                <!-- <p id="localstorage">If you see this message, localstorage works! Although saving isnt actually a feature yet.</p> -->
+
+                </div>
+            <div id="buttons" class="column">
+               <div id="clickers">
+                <div><button id="button-makeabox" class="button" type="button" onclick="makeabox()">Make a Box</button><p id="hover-mab" class="button-hover"><b>Makes a box.</b></p></div>
+
+                <div><button id="button-compressbox" class="button" type="button" onclick="compressbox()">Compress Boxes</button><p id="hover-cb" class="button-hover"><b>Compresses 9 boxes.</b> <br>These boxes are great for making tools.</p></div></div>
+
+                <p id="b-barrier" class="barrier"> Buildings<p>
+                <div id="buildings">
+                <div><button id="button-makeascrewdriver" class="button" type="button" onclick="makescrewdriver()" style="color: cornflowerblue">Make a Screwdriver</button><p id="hover-masd" class="button-hover"><b>Creates a Screwdriver using 4 Compressed Boxes.</b><br>Every Building of this you own adds <b>1 extra box</b> when you click "Make a Box"<br>Although this can change with upgrades</p></div>
+
+                <div><button id="button-hammer" class="button" type="button" onclick="makehammer()">Make a Hammer</button><p id="hover-mah" class="button-hover"><b>Makes a Hammer using 10 Compressed Boxes.</b> <br>The Hammer makes a box every second, although <br>this can change with upgrades.</p></div></div>
+
+                <p id="u-barrier" class="barrier">Upgrades</p>
+                <div id="upgrades">
+                <div><button id="button-stall" class="button" type="button" onclick="upgradestall()">Make a Stall</button><p id="hover-stl" class="button-hover">Creates a Stall Using 9 Compressed Boxes.<br><b>Unlocks useful items.</b></p></div></div>
+
+                <p id="s-barrier" class="barrier">Stall</p>
+                <div id="stall">
+                    <div><button id="button-levelupstall" class="button" type="button" onclick="levelupstall()">Level Up Stall [1/100]</button><p id="hover-lus" class="button-hover"><b>This costs 40 Compressed boxes.</b><br>Every Stall Level reduces the <b>stall's</b> items by <b>0.6%</b><!-- <br><br>At Level 10, 2 new items will be unlocked -->.</p></div>
+
+                   <div id="stall1">
+                   </div>
+
+                   <div id="stall2">
+                       <div><button id="button-smelter" class="button" type="button" onclick="upgradesmelter()">Forge a Smelter</button><p id="hover-fas" class="button-hover"><b>Requires at least 1 hammer to make (you wont lose it)</b> and <b>50 Compressed boxes</b><br>The Smelter <b>IS NOT</b> done yet.</p></div>
+                   </div>
+
+                   <div id="stall3">
+                       <!-- <div><button id="button-eaten" class="button" type="button" onclick="upgradestall()">Make a Stall</button><p id="hover-stl" class="button-hover"><b>Creates a Stall Using 9 Compressed Boxes.</b></p></div> -->
+                   </div><br><br>
+                 </div>
+               </div>
+               <p id="sm-barrier" class="barrier">Smelter</p>
+               <div id="smelter">
+                  <p id="lava">Lava: 0 / 1000 ml</p>
+                   <div><button id="button-addlava" class="button" type="button" onclick="addlava(50)">Add Lava [50]</button><p id="hover-stl" class="button-hover"><b>Adds lava.</b><i> 2 Box = 1 ml, </i>so 50 boxes would be 25 ml.</p></div>
+                   <div><button id="button-addlava" class="button" type="button" onclick="addlava(100)">Forge Pickaxe</button><p id="hover-stl" class="button-hover"><b>Mines stone and rarely ores</b><i> 1 Pickaxe costs 65 Compressed boxes & 65 ml of lava</i></p></div>
+                   <p id="warning">The Smelter <b>IS NOT</b> done yet.</p>
+               </div>
+          </div>
     </body>
 </html>
