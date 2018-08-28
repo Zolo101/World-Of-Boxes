@@ -2,22 +2,22 @@
 <html>
     <head>
        <!-- Metadata so we get higher up the google search :) -->
-        <meta charset="utf-8">
+        <meta charset="utf-8"> <!-- https://zolo101.github.io/World-of-Boxes/Game/main.css -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Zelo101">
         <meta name="description" content="World of Boxes. The game everybody doesnt know of yet.">
-        <meta name="keywords" content="Incremental,Game,Clicker,JavaScript,JS">
-        <title>World of Boxes 0.04</title>
-        <link rel="stylesheet" type="text/css" href="https://zolo101.github.io/World-of-Boxes/Game/main.css">
+        <meta name="keywords" content="Incremental,Game,World Of Boxes,Boxes,Clicker,JavaScript,JS">
+        <title>World of Boxes 0.04.1</title>
+        <link rel="stylesheet" type="text/css" href="Game/sass.css">
         <link rel="shortcut icon" href="Game/Images/box.png" />
-        <!-- Maybe host these? -->
+        <!-- Maybe host this? -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="Game/possibly.js" type="text/javascript"></script>
 
     </head>
     <body id="body">
        <div id="header">
-           <ui>World of Boxes 0.04 -- The CSSCompletion Update</ui><a href="Logs/log.html" target="_blank">(log)</a><ui> -- With Added Jquery -- Clicking on a header closes it's div. -- Last Updated 17-8-18</ui>
+           <ui>World of Boxes 0.04.1 -- The "Go away levelupstall! Nobody likes you!" Update</ui><a href="Logs/log.html" target="_blank">(log)</a><ui> -- Clicking on a header closes it's div. -- Last Updated 28-8-18</ui>
        </div>
         <div id="game">
            <div id="resources" class="column">
@@ -38,13 +38,13 @@
                 <ui><div><button id="button-settings" class="button" type="button" onclick="settings()">Settings</button></div></ui>
 
                 <ui><div id="settings">
-                   <!-- <div><button id="button-settings" class="button" type="button" onclick="save()">Save</button></div>
-                   <div><button id="button-settings" class="button" type="button" onclick="load()">Load</button></div> -->
+                   <div><button id="button-settings" class="button" type="button" onclick="save()">Save</button></div>
+                   <div><button id="button-settings" class="button" type="button" onclick="load()">Load</button></div>
                     <p>For now, you can reset just by refreshing this page (F5)</p><br>
                     <p>Other than that there are no real settings at the moment.</p>
                 </div></ui>
                 <p>Fading effects will come soon, dont worry :)<br> ~/u/Zelo101</p>
-                <p id="warning">Level Up Stall does NOT work!</p>
+                <p id="warning">The Smelter does NOT work yet!</p>
                 <!-- <p id="localstorage">If you see this message, localstorage works! Although saving isnt actually a feature yet.</p> -->
 
                 </div>
@@ -64,9 +64,10 @@
                 <div id="upgrades">
                 <div><button id="button-stall" class="button" type="button" onclick="upgradestall()">Make a Stall</button><p id="hover-stl" class="button-hover">Creates a Stall Using 9 Compressed Boxes.<br><b>Unlocks useful items.</b></p></div></div>
 
-                <p id="s-barrier" class="barrier">Stall</p>
+                <p id="s-barrier" class="barrier">Stall</p><br>
+
                 <div id="stall">
-                    <div><button id="button-levelupstall" class="button" type="button" onclick="levelupstall()">Level Up Stall [1/100]</button><p id="hover-lus" class="button-hover"><b>This costs 40 Compressed boxes.</b><br>Every Stall Level reduces the <b>stall's</b> items by <b>0.6%</b><!-- <br><br>At Level 10, 2 new items will be unlocked -->.</p></div>
+                    <div><!-- <button id="button-levelupstall" class="button" type="button" onclick="levelupstall()">Level Up Stall [1/100]</button> --><p id="hover-lus" class="button-hover"><b>This costs 40 Compressed boxes.</b><br>Every Stall Level reduces the <b>stall's</b> items by <b>0.6%</b><!-- <br><br>At Level 10, 2 new items will be unlocked -->.</p></div>
 
                    <div id="stall1">
                    </div>
@@ -83,8 +84,8 @@
                <p id="sm-barrier" class="barrier">Smelter</p>
                <div id="smelter">
                   <p id="lava">Lava: 0 / 1000 ml</p>
-                   <div><button id="button-addlava" class="button" type="button" onclick="addlava(50)">Add Lava [50]</button><p id="hover-stl" class="button-hover"><b>Adds lava.</b><i> 2 Box = 1 ml, </i>so 50 boxes would be 25 ml.</p></div>
-                   <div><button id="button-addlava" class="button" type="button" onclick="addlava(100)">Forge Pickaxe</button><p id="hover-stl" class="button-hover"><b>Mines stone and rarely ores</b><i> 1 Pickaxe costs 65 Compressed boxes & 65 ml of lava</i></p></div>
+                   <div><button id="button-addlava" class="button" type="button" onclick="addlava(50)">Add Lava [50]</button><p id="hover-al" class="button-hover"><b>Adds lava.</b><i> 2 Box = 1 ml, </i>so 50 boxes would be 25 ml.</p></div>
+                   <div><button id="button-pickaxe" class="button" type="button" onclick="addlava(100)">Forge Pickaxe</button><p id="hover-fp" class="button-hover"><b>Mines stone and rarely ores</b><i> 1 Pickaxe costs 65 Compressed boxes & 65 ml of lava</i></p></div>
                    <p id="warning">The Smelter <b>IS NOT</b> done yet.</p>
                </div>
           </div>

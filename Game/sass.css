@@ -1,0 +1,214 @@
+/*VARS*/
+/* MENU */
+#menu {
+  margin: 18px;
+  border-radius: 20px;
+  width: 600px;
+}
+
+#menu-text {
+  margin: 0px 10px;
+}
+
+#menu-play {
+  margin: 0px 10px;
+}
+
+#menu-news {
+  background-color: cadetblue
+}
+
+#menu-news-latest-title {
+  margin: 0px 10px;
+  font-family: sans-serif;
+  color: black;
+  font-size: 40px;
+}
+
+#menu-news-title {
+  background-color: orange;
+  color: black;
+  text-shadow: 1px 1px 2px grey;
+  margin: 0px 20px;
+  border-radius: 4px;
+  outline-style: solid;
+  width: 130px;
+}
+
+#menu-news-latest-desc {
+  margin: 0px 20px;
+}
+
+/* GAME */
+#body {
+  /*     background:url();
+      background-repeat: repeat-x;
+      background-position: bottom; */
+  background-color: #e5f9ff;
+  /* background-size: 500px; */
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+#header {
+  width: 100%;
+  background-color: dodgerblue;
+  margin: 5px;
+}
+
+#game {
+  height: 95%;
+}
+
+#resources {
+  float: left;
+  width: 225px;
+  height: 95%;
+}
+
+#buttons {
+  width: 75%;
+  height: 95%;
+}
+
+.button {
+  outline-style: solid;
+  outline-color: dimgrey;
+  outline-width: 2px;
+  background-color: gainsboro;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 5px;
+  box-shadow: 2px 2px 4px grey;
+}
+
+.barrier {
+  background: linear-gradient(to right, dodgerblue 0%, dodgerblue 80%, rgba(199, 227, 255, 0) 95%, rgba(255, 255, 255, 0) 100%);
+  margin-left: 220px;
+}
+
+.buy {
+  animation-name: fade;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+  opacity: 1;
+}
+
+.nobuy {
+  animation-name: fade;
+  animation-duration: 0.5s;
+  animation-direction: normal;
+  opacity: 0.5;
+}
+
+/* .icon {
+    background-image: url(Images/Tilemap.png);
+} */
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes extremefade {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* #game-info {
+    outline-style: solid;
+    outline-width: 1px;
+    min-height: 100px;
+    max-height: 100px;
+    min-width: 100px;
+    max-width: 250px;
+    text-align: center;
+}
+ */
+/* .add {
+    color: forestgreen;
+    opacity: 0;
+    animation-name: extremefade;
+    animation-duration: 2s;
+    animation-direction: normal;
+}
+ */
+.frame, #settings, .button-hover {
+  margin: 1px;
+  position: absolute;
+  outline-width: 4px;
+  outline-style: ridge;
+  z-index: 2;
+}
+
+.button-hover {
+  display: none;
+  outline-color: dimgrey;
+  background-color: beige;
+}
+
+#warning {
+  color: orangered;
+  text-shadow: 2px 2px 1px yellow;
+}
+
+#settings {
+  display: none;
+  outline-color: dimgrey;
+  background-color: lightgreen;
+  max-width: 200px;
+}
+
+#game-res-info {
+  font-family: monospace;
+}
+
+.barrier {
+  max-width: 625px;
+  font-size: 16px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#s-barrier {
+  background: linear-gradient(to right, #999999 80%, rgba(230, 230, 230, 0) 95%, rgba(255, 255, 255, 0) 100%);
+}
+
+#sm-barrier {
+  background: linear-gradient(to right, #59756a 80%, rgba(214, 221, 218, 0) 95%, rgba(255, 255, 255, 0) 100%);
+}
+
+#smelter {
+  background: linear-gradient(to bottom, #e5f9ff 0%, lightgray 100%);
+  margin-left: 220px;
+  margin-right: 28px;
+  width: 140px;
+}
+
+#stall1, #stall2, #stall3 {
+  float: left;
+  width: 20%;
+  width: 150px;
+}
+
+.dis, #button-hammer:hover + #hover-ham, #button-mt:hover + #hover-mt, #button-debug:hover + #hover-debug, #button-addlava:hover + #hover-al, #button-pickaxe:hover + #hover-fp, #button-smelter:hover + #hover-fas, #button-levelupstall:hover + #hover-lus, #button-stall:hover + #hover-stl, #button-makeascrewdriver:hover + #hover-masd, #button-hammer:hover + #hover-mah, #button-compressbox:hover + #hover-cb, #button-makeabox:hover + #hover-mab {
+  display: inline;
+}
+
+/* BUTTONS */
+/* BUILDINGS */
+/* UPGRADES */
+/* SMELTER */
+/* DEBUG BUTTONS */
+
+/*# sourceMappingURL=sass.css.map */

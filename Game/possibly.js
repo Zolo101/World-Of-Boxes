@@ -55,7 +55,8 @@ $(document).ready(function () {
             $("#smelter").show();
         }
     });
-    console.log("Everything's ready. Starting the game.")
+    
+    console.log("Everything's ready. Starting the game.");
     tick();
 }); /* Jquery goes here */
 
@@ -78,7 +79,6 @@ var compressedbox = {
 var screwdriver = {
     type: "Building",
     total: 0,
-    quantity: 0,
     clickmakes: 0, /* How much more box adds this building gives you when clicking "Make a Box" */
     cost: 4
 };
@@ -121,6 +121,13 @@ function tick() {
     buttonopacity("#button-compressbox",box,compressedbox);
     buttonopacity("#button-stall",compressedbox,stall);
     buttonopacity("#button-makeascrewdriver",compressedbox,screwdriver);
+    buttonopacity("#button-levelupstall",compressedbox,stall.levelupcost);
+    buttonopacity("#button-hammer",compressedbox,hammer);
+    if (compressedbox.quantity < smelter.cost && hammer.quantity >= 1) {
+        $("#button-smelter").removeClass("buy").addClass("nobuy");
+    } else {
+        $("#button-smelter").removeClass("nobuy").addClass("buy");
+    }
 
     document.getElementById("boxes").innerHTML = box.quantity;
     document.getElementById("compressed-boxes").innerHTML = compressedbox.quantity;
@@ -189,10 +196,10 @@ function compressbox() {
 function makescrewdriver() {
     if (compressedbox.quantity >= screwdriver.cost) {
         compressedbox.quantity = compressedbox.quantity - screwdriver.cost;
-        screwdriver.quantity++;
+        screwdriver.total++;
         screwdriver.clickmakes++;
-        screwdriver.cost = 4 + (screwdriver.quantity + 2) ** 2
-        document.getElementById("button-makeascrewdriver").innerHTML = "Make a Screwdriver " + "(" + screwdriver.quantity + ")";
+        screwdriver.cost = 4 + (screwdriver.total + 2) ** 2
+        document.getElementById("button-makeascrewdriver").innerHTML = "Make a Screwdriver " + "(" + screwdriver.total + ")";
         box.perclick = box.perclick + 1; /* Change this when you add a screwdriver upgrade */
         document.getElementById("hover-masd").innerHTML = "<b>Creates a Screwdriver using " + screwdriver.cost + " Compressed Boxes.</b><br>Every Building of this you own adds <b>1 extra box</b> when you click >Make a Box<<br>Although this can change with upgrades</p";
     }
@@ -249,7 +256,7 @@ function upgradesmelter() {
 }
 
 function addlava(howmuch) {
-    if (box.quantity >= howmuch) {
+    if (box.quantity >= howmuch && lava.quantity >= lava.cap - howmuch) {
         box.quantity = box.quantity - howmuch*2;
         lava.quantity = lava.quantity + howmuch;
         document.getElementById("lava").innerHTML = "Lava: " + lava.quantity + " / " + lava.cap + "ml";
@@ -257,5 +264,33 @@ function addlava(howmuch) {
     tick();
 }
 
-/* SAVING */
+/* SAVING & LOADING */
 
+function save() {
+    localStorage.setItem("box",box.quantity);
+    localStorage.setItem("boxtotal",box.total);
+    localStorage.setItem("boxperclick",box.perclick);
+    localStorage.setItem("boxpersecond",box.persecond);
+    localStorage.setItem("compressedbox",compressedbox.quantity);
+    localStorage.setItem("compressedboxtotal",compressedbox.total);
+
+    localStorage.setItem("stallunlocked",stall.unlocked);
+    localStorage.setItem("screwdriver",screwdriver.total);
+    localStorage.setItem("hammer",hammer.total);
+    console.log("Game saved.");
+}
+
+function load() {
+    document.getElementById("boxes").innerHTML = localStorage.getItem("box");
+    box.quantity = Number(localStorage.getItem("box"));
+    box.total = Number(localStorage.getItem("boxtotal"));
+    box.perclick = Number(localStorage.getItem("boxperclick"));
+    box.persecond = Number(localStorage.getItem("boxpersecond"));
+    document.getElementById("compressed-boxes").innerHTML = localStorage.getItem("compressedbox");
+    compressedbox.quantity = Number(localStorage.getItem("compressedbox"));
+    compressedbox.total = Number(localStorage.getItem("compressedboxtotal"));
+    stall.unlocked = localStorage.getItem("stallunlocked");
+    screwdriver.quantity = Number(localStorage.getItem("screwdriver"));
+    hammer.quantity = Number(localStorage.getItem("hammer"));
+    console.log("Game loaded.");
+}

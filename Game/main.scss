@@ -1,3 +1,7 @@
+/*VARS*/
+
+$in: inline;
+
 /* MENU */
 
 #menu { margin: 18px; border-radius: 20px; width: 600px;}
@@ -105,15 +109,19 @@
 }
  */
 
-.button-hover {
-    display: none;
-    margin: 1px;
+.frame {
+	margin: 1px;
     position: absolute;
     outline-width: 4px;
     outline-style: ridge;
+    z-index: 2;
+}
+
+.button-hover {
+	@extend .frame;
+    display: none;
     outline-color: dimgrey;
     background-color: beige;
-    z-index: 2;
 }
 
 #warning {
@@ -122,15 +130,10 @@
 }
 
 #settings {
+	@extend .frame;
     display: none;
-    margin: 1px;
-    padding: 4px;
-    position: absolute;
-    outline-width: 4px;
-    outline-style: ridge;
     outline-color: dimgrey;
     background-color: lightgreen;
-    z-index: 2;
 
     max-width: 200px;
 }
@@ -175,33 +178,35 @@
     width: 150px;
 }
 
-/* BUTTONS */
-#button-makeabox:hover + #hover-mab {display: inline;}
+.dis {display: $in;}
 
-#button-compressbox:hover + #hover-cb {display: inline;}
+/* BUTTONS */
+#button-makeabox:hover + #hover-mab {@extend .dis;}
+
+#button-compressbox:hover + #hover-cb {@extend .dis;}
 
 /* BUILDINGS */
 
-#button-hammer:hover + #hover-mah {display: inline;}
+#button-hammer:hover + #hover-mah {@extend .dis;}
 
-#button-makeascrewdriver:hover + #hover-masd {display: inline;}
+#button-makeascrewdriver:hover + #hover-masd {@extend .dis;}
 
 /* UPGRADES */
 
-#button-stall:hover + #hover-stl {display: inline;}
-#button-levelupstall:hover + #hover-lus {display: inline;}
+#button-stall:hover + #hover-stl {@extend .dis;}
+#button-levelupstall:hover + #hover-lus {@extend .dis;}
 
-#button-smelter:hover + #hover-fas {display: inline;}
+#button-smelter:hover + #hover-fas {@extend .dis;}
 
 /* SMELTER */
 
-#button-pickaxe:hover + #hover-fp {display: inline;}
-#button-addlava:hover + #hover-al {display: inline;}
+#button-pickaxe:hover + #hover-fp {@extend .dis;}
+#button-addlava:hover + #hover-al {@extend .dis;}
 
 /* DEBUG BUTTONS */
 
-#button-debug:hover + #hover-debug {display: inline;}
+#button-debug:hover + #hover-debug {@extend .dis;}
 
-#button-mt:hover + #hover-mt {display: inline;}
+#button-mt:hover + #hover-mt {@extend .dis;}
 
-#button-hammer:hover + #hover-ham {display: inline;}
+#button-hammer:hover + #hover-ham {@extend .dis;} 
